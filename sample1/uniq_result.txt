@@ -1,0 +1,10 @@
+   84  man uniq
+   85  uniq data.txt
+   86  sort data.txt | uniq
+  109  sort data.txt | uniq
+  113  sort data.txt | uniq
+  114  sort data.txt | uniq -c
+  115  man uniq
+  117  | grep uniq
+  118  history | grep uniq
+  120  history | grep uniq > uniq_result.txt

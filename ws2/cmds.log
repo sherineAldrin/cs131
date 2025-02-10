@@ -1,0 +1,10 @@
+
+   1  pwd
+   2  id
+   3  ls /proc | grep mem
+   4  ls /proc | grep cpu
+   5  head /proc/meminfo
+   6  head /proc/cpuinfo
+   7  tail  /proc/cpuinfo
+   8  cat  /proc/cpuinfo
+   9  cat /etc/os-release
