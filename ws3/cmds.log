@@ -1,0 +1,15 @@
+   01  grep '"2019-01-02' 2019-01-h1.csv > jan2_data.csv
+   02  head -3 jan2_data.csv
+   03  cut -d "," -f8 jan2_data.csv > jan2_pickupLoc.txt
+   04  head -3 jan2_pickupLoc.txt
+   05  sort jan2_pickupLoc.txt | uniq -c | sort -nr > jan2_sorted_loc.txt
+   06  head -3 jan2_sorted_loc.txt
+
+
+   07  grep '"2019-01-10' 2019-01-h1.csv > jan10_data.csv
+   08  head -3 jan10_data.csv
+   09  cut -d "," -f8 jan10_data.csv > jan10_pickupLoc.txt
+   10  head -3 jan10_pickupLoc.txt
+   11  sort jan10_pickupLoc.txt | uniq -c | sort sort -nr > jan10_sorted_loc.txt
+   12  sort jan10_pickupLoc.txt | uniq -c | sort -nr > jan10_sorted_loc.txt
+   13  head -3 jan10_sorted_loc.txt
