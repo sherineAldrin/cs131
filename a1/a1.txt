@@ -1,0 +1,51 @@
+
+
+2a/// making FARE
+  mkdir FARE
+
+
+2c/// finding the mean of the 161.0-246.0 drives
+sherine_aldrin@instance-20250127-192805:~/cs131/a1/FARE$ sum=$(paste -sd+ 161.0-246.0.txt | bc); count=$(wc -l < 161.0-246.0.txt); echo "scale=2; $sum / $count" | bc
+11.19
+
+2c/// finding the mean of the 246.0-164.0 drives
+sherine_aldrin@instance-20250127-192805:~/cs131/a1/FARE$ sum=$(paste -sd+ 246.0-164.0.txt | bc); count=$(wc -l < 246.0-164.0.txt); echo "scale=2; $sum / $count" | bc
+9.25
+
+2d/// finding the max fare on Jan 10th
+sherine_aldrin@instance-20250127-192805:~/cs131/a1$ sort -n jan10_fares.txt | tail -n 1
+36090.3
+
+2e/// finding the 10 most popular drop off locations in the dataset with three or more customers
+sherine_aldrin@instance-20250127-192805:~/cs131/a1$ cut -d',' -f9 customers_3OrMore.csv | sort | uniq -c | sort -nr | head -n 10
+   1658 236.0
+   1383 161.0
+   1350 237.0
+   1162 162.0
+   1067 170.0
+   1012 142.0
+   1003 230.0
+    910 234.0
+    909 48.0
+    888 239.0
+
+1/// showing that w and l work
+sherine_aldrin@instance-20250127-192805:~/cs131/a1$ w
+     15     128    1118
+
+sherine_aldrin@instance-20250127-192805:~/cs131/a1$ l
+total 1772296
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin 450156048 Jan 19 07:24 2019-01-h1.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin 450117226 Feb 19 03:50 jan_data.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin 450117196 Feb 19 04:01 pickup_data.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin         0 Feb 19 04:06 pickup_locs.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin  17867609 Feb 19 04:15 pickup_161.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin    340341 Feb 19 04:17 161_246.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin   6241981 Feb 19 04:17 pickup_246.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin    197801 Feb 19 04:18 246_164.csv
+drwxrwxr-x 2 sherine_aldrin sherine_aldrin      4096 Feb 19 04:23 FARE
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin  34895025 Feb 19 04:56 jan10_data.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin   1256110 Feb 19 05:02 jan10_fares.txt
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin 403585675 Feb 19 05:50 customers.csv
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin       933 Feb 19 06:07 a1.txt
+-rw-rw-r-- 1 sherine_aldrin sherine_aldrin     16402 Feb 19 06:09 cmds.log

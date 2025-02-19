@@ -1,0 +1,47 @@
+
+
+  ///getting only the january data
+      grep '"2019-01' 2019-01-h1.csv > jan_data.csv
+  
+
+  ///getting only the 161.0 pickup location data
+      grep -E '^([^,]*,){7}246.0' jan_data.csv > pickup_161.csv
+
+  ///getting the dropoff location 246.0 and pickup location 161.0
+      grep -E '^([^,]*,){8}246.0' pickup_161.csv > 161_246.csv
+  
+
+  ///getting only the 246.0 pickup location data
+      grep -E '^([^,]*,){7}246.0' jan_data.csv > pickup_246.csv
+  
+  
+  ///getting the dropoff location 246.0 and pickup location 161.0
+      grep -E '^([^,]*,){8}164.0' pickup_246.csv > 246_164.csv
+  
+
+  ///getting the fares from the 161.0-246.0
+      cut -d "," -f11 161_246.csv > FARE/161.0-246.0.txt
+  
+
+  ///doing the same for 246-164
+      cut -d "," -f11 246_164.csv > FARE/246.0-164.0.txt
+  
+
+  /// finding the average of fares from 161-246
+       sum=$(paste -sd+ 161.0-246.0.txt | bc); count=$(wc -l < 161.0-246.0.txt); echo "scale=2; $sum / $count" | bc
+ 
+
+  /// finding the average of fares from 246 to 164
+       sum=$(paste -sd+ 246.0-164.0.txt | bc); count=$(wc -l < 246.0-164.0.txt); echo "scale=2; $sum / $count" | bc
+ 
+
+  ///finding the highest total amount paid by customers who were picked up on January 10, 2019 
+       sort -n jan10_fares.txt | tail -n 1
+
+
+  /// finding the rows with 3 or more customers
+       cut -d',' -f4 jan10_data.csv | paste -d',' jan10_data.csv - | grep -E '^[^,]+,[^,]+,[^,]+,([3-9]\.[0-9]+|[1-9][0-9]+\.[0-9]+)' > customers_3OrMore.csv
+
+
+  /// finding the top 10 dropoff locations from the rides with 3 or more customers
+       cut -d',' -f9 customers.csv | sort | uniq -c | sort -nr | head -n 10
