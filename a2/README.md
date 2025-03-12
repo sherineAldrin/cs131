@@ -1,8 +1,8 @@
 This recipe finder takes in an ingredient as input and returns a list of recipes that include the ingredient.
 
-## Usage
+# Usage
 ./recipes.sh
-# returns
+## returns
 Please enter one ingredient you would like in your recipe:chocolate
 Searching for recipes with 'chocolate'...
 Recipe found: Chocolate Mousse
@@ -14,7 +14,7 @@ Recipe found: S'mores
 Recipe found: Chocolate Chip Pancakes
 
 ./recipes.sh
-# returns
+## returns
 Please enter one ingredient you would like in your recipe:banana
 Searching for recipes with 'banana'...
 Recipe found: Banana Smoothie
