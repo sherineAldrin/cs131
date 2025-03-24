@@ -1,0 +1,17 @@
+//where vendorid is 2
+sed -n '/^2\.0,/p' 2019-01-h1.csv > vendor2.csv
+
+//no separators
+sed 's/[-,]//g' 2019-01-h1.csv > no-separators.csv
+
+//this didn't quite work, but tried to get rid of fractions
+sed 's/\.[0-9]*//g' 2019-01-h1.csv > no-fractions.csv
+
+//frequency of the tip amounts from the customers who paid more than and equal to US$ 10.0 of the total amount
+awk -F',' 'NR>1 && $17 >= 10 {tips[$14]++} END {for (t in tips) print t, tips[t]}' 2019-01-h1.csv > ws56.txt
+
+//sort in descending order
+awk -F',' 'NR>1 {tips[$14]++} END {for (t in tips) print t, tips[t]}' 2019-01-h1.csv | sort -k2,2nr -k1,1 > ws56.txt
+
+//and head -20 of ws56.txt for the top 20
+
