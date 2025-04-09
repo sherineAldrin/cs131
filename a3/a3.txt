@@ -1,0 +1,6 @@
+Alice Total score:  253 Average:  84.3333 Status:  Pass
+Bob Total score:  246 Average:  82 Status:  Pass
+Charlie Total score:  270 Average:  90 Status:  Pass
+David Total score:  195 Average:  65 Status:  Fail
+Eve Total score:  265 Average:  88.3333 Status:  Pass
+Top scoring:  Charlie :  270  Lowest scoring:   :  100

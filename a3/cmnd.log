@@ -1,0 +1,45 @@
+#Here's my command history
+
+sherine_aldrin@instance-20250127-192805:~$ cd cs131
+sherine_aldrin@instance-20250127-192805:~/cs131$ mkdir a3
+sherine_aldrin@instance-20250127-192805:~/cs131$ cd a3
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grades.csv
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ awk -f grader.awk grades.csv
+awk: grader.awk:3:      for (i = 1; i <= NR; i++ {
+awk: grader.awk:3:                               ^ syntax error
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grades.csv
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ awk -f grader.awk grades.csv
+
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ awk -f grader.awk grades.csv
+awk: grader.awk:24:                     status[$2] = 'Fail'
+awk: grader.awk:24:                                  ^ invalid char ''' in expression
+awk: grader.awk:24:                     status[$2] = 'Fail'
+awk: grader.awk:24:                                  ^ syntax error
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ awk -f grader.awk grades.csv
+ Total score:  0 Average:  0 Status:  Fail
+ Total score:  0 Average:  0 Status:  Fail
+ Total score:  0 Average:  0 Status:  Fail
+ Total score:  0 Average:  0 Status:  Fail
+ Total score:  0 Average:  0 Status:  Fail
+Top scoring:   :  0  Lowest scoring:   :  0
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grades.csv
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ vim grader.awk
+
+
+
+#here's the commands to execute and when it worked:
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$ awk -f grader.awk grades.csv
+Alice Total score:  253 Average:  84.3333 Status:  Pass
+Bob Total score:  246 Average:  82 Status:  Pass
+Charlie Total score:  270 Average:  90 Status:  Pass
+David Total score:  195 Average:  65 Status:  Fail
+Eve Total score:  265 Average:  88.3333 Status:  Pass
+Top scoring:  Charlie :  270  Lowest scoring:   :  100
+sherine_aldrin@instance-20250127-192805:~/cs131/a3$
+
